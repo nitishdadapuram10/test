@@ -35,7 +35,7 @@ resource "aws_lb_target_group" "p2_ec2_target_group" {
 
 resource "aws_lb_target_group_attachment" "attachment" {
   target_group_arn = aws_lb_target_group.p2_ec2_target_group.arn
-  target_id        = aws_instance.p2_ec2.id
+  target_id        = aws_instance.p2_ec2_2.id
   port             = 80
 }
 
