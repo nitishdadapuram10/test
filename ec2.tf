@@ -7,7 +7,8 @@ resource "aws_instance" "p2_ec2" {
 
   user_data = <<-EOF
               #!/bin/bash
-              echo "Welcome to Cloud P2" > /var/www/html/index.html
+              sudo yum install httpd -y
+              echo "Welcome to Cloud P2" > sudo tee /var/www/html/index.html
               sudo systemctl start httpd
               sudo systemctl enable httpd
               EOF
@@ -25,7 +26,8 @@ resource "aws_instance" "p2_ec2_2" {
 
   user_data = <<-EOF
               #!/bin/bash
-              echo "Welcome to Cloud P2" > /var/www/html/index.html
+              sudo yum install httpd -y
+              echo "Welcome to Cloud P2" > sudo tee /var/www/html/index.html
               sudo systemctl start httpd
               sudo systemctl enable httpd
               EOF
