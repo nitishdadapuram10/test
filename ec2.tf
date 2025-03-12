@@ -21,7 +21,7 @@ resource "aws_instance" "p2_ec2" {
 resource "aws_instance" "p2_ec2_2" {
   ami           = "ami-0d0f28110d16ee7d6"
   instance_type = "t2.micro"
-  vpc_id   = aws_vpc.p2_vpc.id
+  subnet_id     = aws_subnet.p2_public_subnet.id
 
 
   user_data = <<-EOF
