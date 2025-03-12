@@ -40,7 +40,7 @@ resource "aws_security_group_rule" "allow_alb_to_ec2" {
   type                     = "ingress"
   from_port                = 0
   to_port                  = 0
-  protocol                 = "tcp"
+  protocol                 = "-1"
   security_group_id        = aws_security_group.p2_ec2_sg.id
   source_security_group_id = aws_security_group.p2_alb_sg.id
 }
