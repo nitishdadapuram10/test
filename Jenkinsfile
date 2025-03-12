@@ -1,4 +1,3 @@
-
 pipeline{
     agent any
    environment {
@@ -11,12 +10,26 @@ pipeline{
                git branch: 'main', credentialsId: 'testpipeline', url: 'https://github.com/nitishdadapuram10/test.git'
             }
         }
-   
-        stage('Terraform Destroy'){
-          steps{
-             bat   'terraform destroy --auto-approve'
-          }
+        stage('Terraform Init'){
+            steps{
+                bat 'terraform init'
+            }
+        }
+        stage('Terraform Plan'){
+            steps{
+                bat 'terraform plan'
+            }
+        }
+        stage('Terraform Apply'){
+            steps{
+               bat 'terraform apply --auto-approve'
+            }
        }
+ //       stage('Terraform Destroy'){
+   //       steps{
+     //        bat   'terraform destroy --auto-approve'
+      //     }
+     //  }
        
     }
 }
