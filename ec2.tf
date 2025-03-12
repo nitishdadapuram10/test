@@ -18,7 +18,7 @@ resource "aws_instance" "p2_ec2" {
   }
 }
 
-resource "aws_instance" "p2_ec2_2" {
+resource "aws_instance" "p2_ec2_public" {
   ami           = "ami-0d0f28110d16ee7d6"
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.p2_public_subnet.id
